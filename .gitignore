@@ -1,0 +1,5 @@
+# IDE folder
+.idea/
+
+# Bitrix core folder
+bitrix/
