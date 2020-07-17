@@ -36,26 +36,83 @@
         <use xlink:href="#icon-menu"></use>
       </svg>
     </div>
-    <div class="logo"><img src="<?=SITE_TEMPLATE_PATH ?>/assets/img/logo.png" alt="РусКо"/></div>
+
+    <? $APPLICATION->IncludeComponent(
+      "bitrix:main.include",
+      "",
+      array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "inc",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => "/include/logo.php"
+      )
+    ); ?>
+
     <div class="navblock">
       <div class="backbtn">
         <svg width="40" height="40">
           <use xlink:href="#icon-closecross"></use>
         </svg>
       </div>
-      <div class="contacts"><a href="tel:+78000000000">
+      <div class="contacts">
+        <a href="tel:+78000000000">
           <svg width="20" height="20">
             <use xlink:href="#icon-phone"></use>
           </svg>
-          <span>8 (000) 000-00-00</span></a><a href="mailto:info@info">
+          <span>
+            <?$APPLICATION->IncludeComponent(
+              "bitrix:main.include",
+              "",
+              Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/include/header-phone.php"
+              )
+            );?>
+          </span>
+        </a>
+
+        <a href="mailto:info@info">
           <svg width="20" height="20">
             <use xlink:href="#icon-mail"></use>
           </svg>
-          <span>info@info.ru</span></a></div>
-      <nav><a class="toankor" href="#whywe">Почему мы</a><a class="toankor" href="#wehelp">Услуги</a><a class="toankor"
-                                                                                                        href="#tariffs">Тарифы</a><a
-          class="toankor" href="#reviews">Отзывы</a><a class="toankor" href="#contacts">Контакты</a></nav>
+          <span>
+            <?$APPLICATION->IncludeComponent(
+              "bitrix:main.include",
+              "",
+              Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/include/header-email.php"
+              )
+            );?>
+          </span>
+        </a>
+      </div>
+      <nav>
+      <? $APPLICATION->IncludeComponent("bitrix:menu", "main_menu", array(
+        "ALLOW_MULTI_SELECT" => "N",  // Разрешить несколько активных пунктов одновременно
+        "CHILD_MENU_TYPE" => "left",  // Тип меню для остальных уровней
+        "DELAY" => "N",  // Откладывать выполнение шаблона меню
+        "MAX_LEVEL" => "1",  // Уровень вложенности меню
+        "MENU_CACHE_GET_VARS" => array(  // Значимые переменные запроса
+          0 => "",
+        ),
+        "MENU_CACHE_TIME" => "3600",  // Время кеширования (сек.)
+        "MENU_CACHE_TYPE" => "N",  // Тип кеширования
+        "MENU_CACHE_USE_GROUPS" => "Y",  // Учитывать права доступа
+        "ROOT_MENU_TYPE" => "main_menu",  // Тип меню для первого уровня
+        "USE_EXT" => "N",  // Подключать файлы с именами вида .тип_меню.menu_ext.php
+      ),
+        false
+      ); ?>
+      </nav>
+
     </div>
+
+
     <div class="headoverlay"></div>
   </div>
 </header>
