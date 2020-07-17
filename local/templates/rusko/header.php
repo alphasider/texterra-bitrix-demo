@@ -36,17 +36,20 @@
         <use xlink:href="#icon-menu"></use>
       </svg>
     </div>
-
-    <? $APPLICATION->IncludeComponent(
-      "bitrix:main.include",
-      "",
-      array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => "/include/logo.php"
-      )
-    ); ?>
+    <div class="logo">
+      <a href="/">
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          "",
+          array(
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/include/logo.php"
+          )
+        ); ?>
+      </a>
+    </div>
 
     <div class="navblock">
       <div class="backbtn">
@@ -60,16 +63,16 @@
             <use xlink:href="#icon-phone"></use>
           </svg>
           <span>
-            <?$APPLICATION->IncludeComponent(
+            <? $APPLICATION->IncludeComponent(
               "bitrix:main.include",
               "",
-              Array(
+              array(
                 "AREA_FILE_SHOW" => "file",
                 "AREA_FILE_SUFFIX" => "inc",
                 "EDIT_TEMPLATE" => "",
                 "PATH" => "/include/header-phone.php"
               )
-            );?>
+            ); ?>
           </span>
         </a>
 
@@ -78,36 +81,36 @@
             <use xlink:href="#icon-mail"></use>
           </svg>
           <span>
-            <?$APPLICATION->IncludeComponent(
+            <? $APPLICATION->IncludeComponent(
               "bitrix:main.include",
               "",
-              Array(
+              array(
                 "AREA_FILE_SHOW" => "file",
                 "AREA_FILE_SUFFIX" => "inc",
                 "EDIT_TEMPLATE" => "",
                 "PATH" => "/include/header-email.php"
               )
-            );?>
+            ); ?>
           </span>
         </a>
       </div>
       <nav>
-      <? $APPLICATION->IncludeComponent("bitrix:menu", "main_menu", array(
-        "ALLOW_MULTI_SELECT" => "N",  // Разрешить несколько активных пунктов одновременно
-        "CHILD_MENU_TYPE" => "left",  // Тип меню для остальных уровней
-        "DELAY" => "N",  // Откладывать выполнение шаблона меню
-        "MAX_LEVEL" => "1",  // Уровень вложенности меню
-        "MENU_CACHE_GET_VARS" => array(  // Значимые переменные запроса
-          0 => "",
+        <? $APPLICATION->IncludeComponent("bitrix:menu", "main_menu", array(
+          "ALLOW_MULTI_SELECT" => "N",  // Разрешить несколько активных пунктов одновременно
+          "CHILD_MENU_TYPE" => "left",  // Тип меню для остальных уровней
+          "DELAY" => "N",  // Откладывать выполнение шаблона меню
+          "MAX_LEVEL" => "1",  // Уровень вложенности меню
+          "MENU_CACHE_GET_VARS" => array(  // Значимые переменные запроса
+            0 => "",
+          ),
+          "MENU_CACHE_TIME" => "3600",  // Время кеширования (сек.)
+          "MENU_CACHE_TYPE" => "N",  // Тип кеширования
+          "MENU_CACHE_USE_GROUPS" => "Y",  // Учитывать права доступа
+          "ROOT_MENU_TYPE" => "main_menu",  // Тип меню для первого уровня
+          "USE_EXT" => "N",  // Подключать файлы с именами вида .тип_меню.menu_ext.php
         ),
-        "MENU_CACHE_TIME" => "3600",  // Время кеширования (сек.)
-        "MENU_CACHE_TYPE" => "N",  // Тип кеширования
-        "MENU_CACHE_USE_GROUPS" => "Y",  // Учитывать права доступа
-        "ROOT_MENU_TYPE" => "main_menu",  // Тип меню для первого уровня
-        "USE_EXT" => "N",  // Подключать файлы с именами вида .тип_меню.menu_ext.php
-      ),
-        false
-      ); ?>
+          false
+        ); ?>
       </nav>
 
     </div>
