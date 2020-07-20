@@ -58,9 +58,7 @@
         "SORT_ORDER2" => "ASC",
         "STRICT_SECTION_CHECK" => "N"
       )
-    ); ?>
-  </section>
-
+    ); ?> </section>
   <section id="whywe">
     <div class="container">
       <div class="headline">
@@ -71,13 +69,11 @@
             array(
               "AREA_FILE_SHOW" => "file",
               "AREA_FILE_SUFFIX" => "inc",
-              "EDIT_TEMPLATE" => "",
               "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
               "PATH" => "/include/advantages-title.php"
-            ),
-            false
-          ); ?>
-        </h2>
+            )
+          ); ?> </h2>
       </div>
       <? $APPLICATION->IncludeComponent(
         "bitrix:news.list",
@@ -138,7 +134,6 @@
       ); ?>
     </div>
   </section>
-
   <div class="contentline" id="wehelp">
     <div class="container">
       <div class="headline">
@@ -149,17 +144,92 @@
             array(
               "AREA_FILE_SHOW" => "file",
               "AREA_FILE_SUFFIX" => "inc",
-              "EDIT_TEMPLATE" => "",
               "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
               "PATH" => "/include/services-title.php"
-            ),
-            false
+            )
           ); ?>
         </div>
       </div>
       <? $APPLICATION->IncludeComponent(
         "bitrix:news.list",
         "services_template",
+        array(
+          "ACTIVE_DATE_FORMAT" => "d.m.Y",
+          "ADD_SECTIONS_CHAIN" => "Y",
+          "AJAX_MODE" => "N",
+          "AJAX_OPTION_ADDITIONAL" => "",
+          "AJAX_OPTION_HISTORY" => "N",
+          "AJAX_OPTION_JUMP" => "N",
+          "AJAX_OPTION_STYLE" => "Y",
+          "CACHE_FILTER" => "N",
+          "CACHE_GROUPS" => "Y",
+          "CACHE_TIME" => "36000000",
+          "CACHE_TYPE" => "A",
+          "CHECK_DATES" => "Y",
+          "COMPONENT_TEMPLATE" => "services_template",
+          "DETAIL_URL" => "",
+          "DISPLAY_BOTTOM_PAGER" => "N",
+          "DISPLAY_DATE" => "Y",
+          "DISPLAY_NAME" => "Y",
+          "DISPLAY_PICTURE" => "Y",
+          "DISPLAY_PREVIEW_TEXT" => "Y",
+          "DISPLAY_TOP_PAGER" => "N",
+          "FIELD_CODE" => array(0 => "NAME", 1 => "",),
+          "FILTER_NAME" => "",
+          "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+          "IBLOCK_ID" => "4",
+          "IBLOCK_TYPE" => "services",
+          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+          "INCLUDE_SUBSECTIONS" => "Y",
+          "MESSAGE_404" => "",
+          "NEWS_COUNT" => "20",
+          "PAGER_BASE_LINK_ENABLE" => "N",
+          "PAGER_DESC_NUMBERING" => "N",
+          "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+          "PAGER_SHOW_ALL" => "N",
+          "PAGER_SHOW_ALWAYS" => "N",
+          "PAGER_TEMPLATE" => ".default",
+          "PAGER_TITLE" => "Услуги",
+          "PARENT_SECTION" => "",
+          "PARENT_SECTION_CODE" => "",
+          "PREVIEW_TRUNCATE_LEN" => "",
+          "PROPERTY_CODE" => array(0 => "SERVICE", 1 => "",),
+          "SET_BROWSER_TITLE" => "Y",
+          "SET_LAST_MODIFIED" => "N",
+          "SET_META_DESCRIPTION" => "Y",
+          "SET_META_KEYWORDS" => "Y",
+          "SET_STATUS_404" => "N",
+          "SET_TITLE" => "Y",
+          "SHOW_404" => "N",
+          "SORT_BY1" => "ACTIVE_FROM",
+          "SORT_BY2" => "SORT",
+          "SORT_ORDER1" => "ASC",
+          "SORT_ORDER2" => "ASC",
+          "STRICT_SECTION_CHECK" => "N"
+        )
+      ); ?>
+    </div>
+  </div>
+  <section id="reviews">
+    <div class="container">
+      <div class="headline">
+        <h2>
+          <? $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            ".default",
+            array(
+              "AREA_FILE_SHOW" => "file",
+              "AREA_FILE_SUFFIX" => "inc",
+              "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
+              "PATH" => "/include/testimonials-title.php"
+            )
+          ); ?> </h2>
+      </div>
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "testimonials_slider",
         array(
           "ACTIVE_DATE_FORMAT" => "d.m.Y",
           "ADD_SECTIONS_CHAIN" => "Y",
@@ -180,14 +250,11 @@
           "DISPLAY_PICTURE" => "Y",
           "DISPLAY_PREVIEW_TEXT" => "Y",
           "DISPLAY_TOP_PAGER" => "N",
-          "FIELD_CODE" => array(
-            0 => "NAME",
-            1 => "",
-          ),
+          "FIELD_CODE" => array(0 => "NAME", 1 => "PREVIEW_PICTURE", 2 => "DETAIL_PICTURE", 3 => "",),
           "FILTER_NAME" => "",
           "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-          "IBLOCK_ID" => "4",
-          "IBLOCK_TYPE" => "services",
+          "IBLOCK_ID" => "3",
+          "IBLOCK_TYPE" => "sliders",
           "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
           "INCLUDE_SUBSECTIONS" => "Y",
           "MESSAGE_404" => "",
@@ -198,14 +265,11 @@
           "PAGER_SHOW_ALL" => "N",
           "PAGER_SHOW_ALWAYS" => "N",
           "PAGER_TEMPLATE" => ".default",
-          "PAGER_TITLE" => "Услуги",
+          "PAGER_TITLE" => "Отзывы",
           "PARENT_SECTION" => "",
           "PARENT_SECTION_CODE" => "",
           "PREVIEW_TRUNCATE_LEN" => "",
-          "PROPERTY_CODE" => array(
-            0 => "SERVICE",
-            1 => "",
-          ),
+          "PROPERTY_CODE" => array(0 => "", 1 => "",),
           "SET_BROWSER_TITLE" => "Y",
           "SET_LAST_MODIFIED" => "N",
           "SET_META_DESCRIPTION" => "Y",
@@ -215,103 +279,13 @@
           "SHOW_404" => "N",
           "SORT_BY1" => "ACTIVE_FROM",
           "SORT_BY2" => "SORT",
-          "SORT_ORDER1" => "ASC",
+          "SORT_ORDER1" => "DESC",
           "SORT_ORDER2" => "ASC",
-          "STRICT_SECTION_CHECK" => "N",
-          "COMPONENT_TEMPLATE" => "services_template"
+          "STRICT_SECTION_CHECK" => "N"
         )
       ); ?>
-
-    </div>
-  </div>
-
-  <section id="reviews">
-    <div class="container">
-      <div class="headline">
-        <h2>
-          <? $APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            ".default",
-            array(
-              "AREA_FILE_SHOW" => "file",
-              "AREA_FILE_SUFFIX" => "inc",
-              "EDIT_TEMPLATE" => "",
-              "COMPONENT_TEMPLATE" => ".default",
-              "PATH" => "/include/testimonials-title.php"
-            ),
-            false
-          ); ?>
-        </h2>
-      </div>
-
-      <? $APPLICATION->IncludeComponent("bitrix:news.list", "testimonials_slider",
-        array(
-          "ACTIVE_DATE_FORMAT" => "d.m.Y",  // Формат показа даты
-          "ADD_SECTIONS_CHAIN" => "Y",  // Включать раздел в цепочку навигации
-          "AJAX_MODE" => "N",  // Включить режим AJAX
-          "AJAX_OPTION_ADDITIONAL" => "",  // Дополнительный идентификатор
-          "AJAX_OPTION_HISTORY" => "N",  // Включить эмуляцию навигации браузера
-          "AJAX_OPTION_JUMP" => "N",  // Включить прокрутку к началу компонента
-          "AJAX_OPTION_STYLE" => "Y",  // Включить подгрузку стилей
-          "CACHE_FILTER" => "N",  // Кешировать при установленном фильтре
-          "CACHE_GROUPS" => "Y",  // Учитывать права доступа
-          "CACHE_TIME" => "36000000",  // Время кеширования (сек.)
-          "CACHE_TYPE" => "A",  // Тип кеширования
-          "CHECK_DATES" => "Y",  // Показывать только активные на данный момент элементы
-          "DETAIL_URL" => "",  // URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
-          "DISPLAY_BOTTOM_PAGER" => "N",  // Выводить под списком
-          "DISPLAY_DATE" => "Y",  // Выводить дату элемента
-          "DISPLAY_NAME" => "Y",  // Выводить название элемента
-          "DISPLAY_PICTURE" => "Y",  // Выводить изображение для анонса
-          "DISPLAY_PREVIEW_TEXT" => "Y",  // Выводить текст анонса
-          "DISPLAY_TOP_PAGER" => "N",  // Выводить над списком
-          "FIELD_CODE" => array(  // Поля
-            0 => "NAME",
-            1 => "PREVIEW_PICTURE",
-            2 => "DETAIL_PICTURE",
-            3 => "",
-          ),
-          "FILTER_NAME" => "",  // Фильтр
-          "HIDE_LINK_WHEN_NO_DETAIL" => "N",  // Скрывать ссылку, если нет детального описания
-          "IBLOCK_ID" => "3",  // Код информационного блока
-          "IBLOCK_TYPE" => "sliders",  // Тип информационного блока (используется только для проверки)
-          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",  // Включать инфоблок в цепочку навигации
-          "INCLUDE_SUBSECTIONS" => "Y",  // Показывать элементы подразделов раздела
-          "MESSAGE_404" => "",  // Сообщение для показа (по умолчанию из компонента)
-          "NEWS_COUNT" => "20",  // Количество новостей на странице
-          "PAGER_BASE_LINK_ENABLE" => "N",  // Включить обработку ссылок
-          "PAGER_DESC_NUMBERING" => "N",  // Использовать обратную навигацию
-          "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",  // Время кеширования страниц для обратной навигации
-          "PAGER_SHOW_ALL" => "N",  // Показывать ссылку "Все"
-          "PAGER_SHOW_ALWAYS" => "N",  // Выводить всегда
-          "PAGER_TEMPLATE" => ".default",  // Шаблон постраничной навигации
-          "PAGER_TITLE" => "Отзывы",  // Название категорий
-          "PARENT_SECTION" => "",  // ID раздела
-          "PARENT_SECTION_CODE" => "",  // Код раздела
-          "PREVIEW_TRUNCATE_LEN" => "",  // Максимальная длина анонса для вывода (только для типа текст)
-          "PROPERTY_CODE" => array(  // Свойства
-            0 => "",
-            1 => "",
-          ),
-          "SET_BROWSER_TITLE" => "Y",  // Устанавливать заголовок окна браузера
-          "SET_LAST_MODIFIED" => "N",  // Устанавливать в заголовках ответа время модификации страницы
-          "SET_META_DESCRIPTION" => "Y",  // Устанавливать описание страницы
-          "SET_META_KEYWORDS" => "Y",  // Устанавливать ключевые слова страницы
-          "SET_STATUS_404" => "N",  // Устанавливать статус 404
-          "SET_TITLE" => "Y",  // Устанавливать заголовок страницы
-          "SHOW_404" => "N",  // Показ специальной страницы
-          "SORT_BY1" => "ACTIVE_FROM",  // Поле для первой сортировки новостей
-          "SORT_BY2" => "SORT",  // Поле для второй сортировки новостей
-          "SORT_ORDER1" => "DESC",  // Направление для первой сортировки новостей
-          "SORT_ORDER2" => "ASC",  // Направление для второй сортировки новостей
-          "STRICT_SECTION_CHECK" => "N",  // Строгая проверка раздела для показа списка
-        ),
-        false
-      ); ?>
-
     </div>
   </section>
-
   <section id="partners">
     <div class="container">
       <div class="headline">
@@ -322,80 +296,119 @@
             array(
               "AREA_FILE_SHOW" => "file",
               "AREA_FILE_SUFFIX" => "inc",
-              "EDIT_TEMPLATE" => "",
               "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
               "PATH" => "/include/partners-title.php"
             )
-          ); ?>
-        </h2>
+          ); ?> </h2>
+      </div>
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "partners_slider",
+        array(
+          "ACTIVE_DATE_FORMAT" => "d.m.Y",
+          "ADD_SECTIONS_CHAIN" => "Y",
+          "AJAX_MODE" => "N",
+          "AJAX_OPTION_ADDITIONAL" => "",
+          "AJAX_OPTION_HISTORY" => "N",
+          "AJAX_OPTION_JUMP" => "N",
+          "AJAX_OPTION_STYLE" => "Y",
+          "CACHE_FILTER" => "N",
+          "CACHE_GROUPS" => "Y",
+          "CACHE_TIME" => "36000000",
+          "CACHE_TYPE" => "A",
+          "CHECK_DATES" => "Y",
+          "DETAIL_URL" => "",
+          "DISPLAY_BOTTOM_PAGER" => "N",
+          "DISPLAY_DATE" => "Y",
+          "DISPLAY_NAME" => "Y",
+          "DISPLAY_PICTURE" => "Y",
+          "DISPLAY_PREVIEW_TEXT" => "Y",
+          "DISPLAY_TOP_PAGER" => "N",
+          "FIELD_CODE" => array(0 => "ID", 1 => "PREVIEW_PICTURE", 2 => "",),
+          "FILTER_NAME" => "",
+          "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+          "IBLOCK_ID" => "2",
+          "IBLOCK_TYPE" => "sliders",
+          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+          "INCLUDE_SUBSECTIONS" => "Y",
+          "MESSAGE_404" => "",
+          "NEWS_COUNT" => "20",
+          "PAGER_BASE_LINK_ENABLE" => "N",
+          "PAGER_DESC_NUMBERING" => "N",
+          "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+          "PAGER_SHOW_ALL" => "N",
+          "PAGER_SHOW_ALWAYS" => "N",
+          "PAGER_TEMPLATE" => ".default",
+          "PAGER_TITLE" => "Партнеры",
+          "PARENT_SECTION" => "",
+          "PARENT_SECTION_CODE" => "",
+          "PREVIEW_TRUNCATE_LEN" => "",
+          "PROPERTY_CODE" => array(0 => "", 1 => "",),
+          "SET_BROWSER_TITLE" => "Y",
+          "SET_LAST_MODIFIED" => "N",
+          "SET_META_DESCRIPTION" => "Y",
+          "SET_META_KEYWORDS" => "Y",
+          "SET_STATUS_404" => "N",
+          "SET_TITLE" => "Y",
+          "SHOW_404" => "N",
+          "SORT_BY1" => "ACTIVE_FROM",
+          "SORT_BY2" => "SORT",
+          "SORT_ORDER1" => "DESC",
+          "SORT_ORDER2" => "ASC",
+          "STRICT_SECTION_CHECK" => "N"
+        )
+      ); ?>
+    </div>
+  </section>
+  <div class="contentline" id="lineform">
+  <div class="container">
+    <div class="info">
+      <div class="h3">
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          ".default",
+          array(
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/include/footer-contact-form/contact-form-title.php"
+          )
+        ); ?>
+      </div>
+      <div class="subtitle">
+
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:main.include",
+          ".default",
+          array(
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/include/footer-contact-form/contact-form-subtitle.php"
+          )); ?>
+
       </div>
 
-      <? $APPLICATION->IncludeComponent("bitrix:news.list", "partners_slider",
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:main.feedback",
+        "templates/.default",
         array(
-          "ACTIVE_DATE_FORMAT" => "d.m.Y",  // Формат показа даты
-          "ADD_SECTIONS_CHAIN" => "Y",  // Включать раздел в цепочку навигации
-          "AJAX_MODE" => "N",  // Включить режим AJAX
-          "AJAX_OPTION_ADDITIONAL" => "",  // Дополнительный идентификатор
-          "AJAX_OPTION_HISTORY" => "N",  // Включить эмуляцию навигации браузера
-          "AJAX_OPTION_JUMP" => "N",  // Включить прокрутку к началу компонента
-          "AJAX_OPTION_STYLE" => "Y",  // Включить подгрузку стилей
-          "CACHE_FILTER" => "N",  // Кешировать при установленном фильтре
-          "CACHE_GROUPS" => "Y",  // Учитывать права доступа
-          "CACHE_TIME" => "36000000",  // Время кеширования (сек.)
-          "CACHE_TYPE" => "A",  // Тип кеширования
-          "CHECK_DATES" => "Y",  // Показывать только активные на данный момент элементы
-          "DETAIL_URL" => "",  // URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
-          "DISPLAY_BOTTOM_PAGER" => "N",  // Выводить под списком
-          "DISPLAY_DATE" => "Y",  // Выводить дату элемента
-          "DISPLAY_NAME" => "Y",  // Выводить название элемента
-          "DISPLAY_PICTURE" => "Y",  // Выводить изображение для анонса
-          "DISPLAY_PREVIEW_TEXT" => "Y",  // Выводить текст анонса
-          "DISPLAY_TOP_PAGER" => "N",  // Выводить над списком
-          "FIELD_CODE" => array(  // Поля
-            0 => "ID",
-            1 => "PREVIEW_PICTURE",
-            2 => "",
+          "AJAX_MODE" => "Y",
+          "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
+          "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
+          "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
+          "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
+            0 => "NONE",
           ),
-          "FILTER_NAME" => "",  // Фильтр
-          "HIDE_LINK_WHEN_NO_DETAIL" => "N",  // Скрывать ссылку, если нет детального описания
-          "IBLOCK_ID" => "2",  // Код информационного блока
-          "IBLOCK_TYPE" => "sliders",  // Тип информационного блока (используется только для проверки)
-          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",  // Включать инфоблок в цепочку навигации
-          "INCLUDE_SUBSECTIONS" => "Y",  // Показывать элементы подразделов раздела
-          "MESSAGE_404" => "",  // Сообщение для показа (по умолчанию из компонента)
-          "NEWS_COUNT" => "20",  // Количество новостей на странице
-          "PAGER_BASE_LINK_ENABLE" => "N",  // Включить обработку ссылок
-          "PAGER_DESC_NUMBERING" => "N",  // Использовать обратную навигацию
-          "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",  // Время кеширования страниц для обратной навигации
-          "PAGER_SHOW_ALL" => "N",  // Показывать ссылку "Все"
-          "PAGER_SHOW_ALWAYS" => "N",  // Выводить всегда
-          "PAGER_TEMPLATE" => ".default",  // Шаблон постраничной навигации
-          "PAGER_TITLE" => "Партнеры",  // Название категорий
-          "PARENT_SECTION" => "",  // ID раздела
-          "PARENT_SECTION_CODE" => "",  // Код раздела
-          "PREVIEW_TRUNCATE_LEN" => "",  // Максимальная длина анонса для вывода (только для типа текст)
-          "PROPERTY_CODE" => array(  // Свойства
-            0 => "",
-            1 => "",
-          ),
-          "SET_BROWSER_TITLE" => "Y",  // Устанавливать заголовок окна браузера
-          "SET_LAST_MODIFIED" => "N",  // Устанавливать в заголовках ответа время модификации страницы
-          "SET_META_DESCRIPTION" => "Y",  // Устанавливать описание страницы
-          "SET_META_KEYWORDS" => "Y",  // Устанавливать ключевые слова страницы
-          "SET_STATUS_404" => "N",  // Устанавливать статус 404
-          "SET_TITLE" => "Y",  // Устанавливать заголовок страницы
-          "SHOW_404" => "N",  // Показ специальной страницы
-          "SORT_BY1" => "ACTIVE_FROM",  // Поле для первой сортировки новостей
-          "SORT_BY2" => "SORT",  // Поле для второй сортировки новостей
-          "SORT_ORDER1" => "DESC",  // Направление для первой сортировки новостей
-          "SORT_ORDER2" => "ASC",  // Направление для второй сортировки новостей
-          "STRICT_SECTION_CHECK" => "N",  // Строгая проверка раздела для показа списка
-        )
+          "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+        ),
+        false
       ); ?>
 
 
     </div>
-  </section>
-
-
+  </div>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
