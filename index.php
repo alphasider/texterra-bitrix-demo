@@ -134,6 +134,45 @@
       ); ?>
     </div>
   </section>
+
+  <div class="contentline" id="centerform">
+    <div class="container">
+      <div class="info">
+        <div class="h3">
+          <? $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            ".default",
+            array(
+              "AREA_FILE_SHOW" => "file",
+              "AREA_FILE_SUFFIX" => "inc",
+              "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
+              "PATH" => "/include/consult-contact-form-title.php"
+            )
+          ); ?>
+        </div>
+      </div>
+
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:main.feedback",
+        "templates/consult-contact-form",
+        array(
+          "AJAX_MODE" => "Y",
+          "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
+          "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
+          "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
+          "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
+            "NONE"
+          ),
+          "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+        ),
+        false
+      ); ?>
+
+    </div>
+  </div>
+
+
   <div class="contentline" id="wehelp">
     <div class="container">
       <div class="headline">
@@ -394,7 +433,7 @@
 
       <? $APPLICATION->IncludeComponent(
         "bitrix:main.feedback",
-        "templates/.default",
+        "templates/footer-contact-form",
         array(
           "AJAX_MODE" => "Y",
           "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
