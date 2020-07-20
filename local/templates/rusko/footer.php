@@ -25,35 +25,24 @@
   </div>
 </footer>
 <div id="overlay"></div>
-<div class="modal" data-pp="callback">
-  <div class="modalbody">
-    <div class="close">
-      <svg>
-        <use xlink:href="#icon-closecross"></use>
-      </svg>
-    </div>
-    <div class="holder">
-      <form class="form" action="post">
-        <div class="caption lightyellow">Задайте свой вопрос бухгалтеру</div>
-        <p>Консультация бесплатна и обычно занимает не более 15 минут, а полученные знания останутся с вами
-          навсегда.</p>
-        <div class="fields">
-          <div class="inputholder">
-            <input type="text" placeholder="Ваше имя"/>
-          </div>
-          <div class="inputholder">
-            <input type="text" placeholder="Телефон" data-phone="data-phone" data-placeholder="+7 (___) ___-__-__"/>
-          </div>
-        </div>
-        <div class="inputholder btns">
-          <button class="btn" data-send="data-send">Получить консультацию</button>
-          <span class="small">Нажимая на кнопку «Получить консультацию», вы подтверждаете свое согласие на <a href="#"
-                                                                                                              target="_blank">обработку пользовательских данных.        </a></span>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+
+<?php
+  $APPLICATION->IncludeComponent(
+    "bitrix:main.feedback",
+    "templates/question-contact-form",
+    array(
+      "AJAX_MODE" => "Y",
+      "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
+      "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
+      "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
+      "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
+        "NONE"
+      ),
+      "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+    ),
+    false
+  );
+?>
 
 <?php
   $APPLICATION->IncludeComponent(

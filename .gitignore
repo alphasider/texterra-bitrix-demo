@@ -3,3 +3,6 @@
 
 # Bitrix core folder
 bitrix/
+
+# Custom bitrix modules and templates
+!local/**/bitrix

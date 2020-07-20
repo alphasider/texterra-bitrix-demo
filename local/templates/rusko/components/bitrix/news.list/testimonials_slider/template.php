@@ -1,0 +1,35 @@
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+  /** @var array $arParams */
+  /** @var array $arResult */
+  /** @global CMain $APPLICATION */
+  /** @global CUser $USER */
+  /** @global CDatabase $DB */
+  /** @var CBitrixComponentTemplate $this */
+  /** @var string $templateName */
+  /** @var string $templateFile */
+  /** @var string $templateFolder */
+  /** @var string $componentPath */
+  /** @var CBitrixComponent $component */
+  $this->setFrameMode(true);
+?>
+<div class="sliderholder">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <? foreach ($arResult['ITEMS'] as $arItem): ?>
+        <a class="swiper-slide" data-fancybox="docs" href="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>">
+          <div class="img" style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>)"></div>
+        </a>
+      <? endforeach; ?>
+    </div>
+  </div>
+  <div class="swiper-button-next">
+    <svg width="16" height="29">
+      <use xlink:href="#icon-arrow"></use>
+    </svg>
+  </div>
+  <div class="swiper-button-prev">
+    <svg width="16" height="29">
+      <use xlink:href="#icon-arrow"></use>
+    </svg>
+  </div>
+</div>
