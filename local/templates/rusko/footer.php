@@ -54,39 +54,25 @@
     </div>
   </div>
 </div>
-<div class="modal" data-pp="order">
-  <div class="modalbody">
-    <div class="close">
-      <svg>
-        <use xlink:href="#icon-closecross"></use>
-      </svg>
-    </div>
-    <div class="holder">
-      <form class="form">
-        <input type="hidden" data-servicename="data-servicename"/>
-        <div class="caption lightyellow">Оставьте заявку</div>
-        <p>Наш сотрудник с вами свяжется в ближайшее время.</p>
-        <div class="fields">
-          <div class="inputholder">
-            <input type="text" placeholder="Ваше имя"/>
-            <input type="text" placeholder="Номер телефона" data-phone="data-phone"
-                   data-placeholder="+7 (___) ___-__-__"/><span class="or">или</span>
-            <input type="text" placeholder="E-mail"/>
-          </div>
-          <div class="inputholder">
-            <label for="">Ваш вопрос</label>
-            <textarea name="" cols="30" rows="10"></textarea>
-          </div>
-        </div>
-        <div class="inputholder btns">
-          <button class="btn" data-send="data-send">Оставить заявку</button>
-          <span class="small">Нажимая на кнопку «Оставить заявку», вы подтверждаете свое согласие на <a href="#"
-                                                                                                        target="_blank">обработку пользовательских данных.        </a></span>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+
+<?php
+  $APPLICATION->IncludeComponent(
+    "bitrix:main.feedback",
+    "templates/services-contact-form",
+    array(
+      "AJAX_MODE" => "Y",
+      "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
+      "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
+      "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
+      "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
+        "NONE"
+      ),
+      "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+    ),
+    false
+  );
+?>
+
 <div class="modal" data-pp="thanks">
   <div class="modalbody">
     <div class="close">
