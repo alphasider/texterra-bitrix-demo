@@ -57,43 +57,60 @@
           <use xlink:href="#icon-closecross"></use>
         </svg>
       </div>
-      <div class="contacts">
-        <a href="tel:+78000000000">
-          <svg width="20" height="20">
-            <use xlink:href="#icon-phone"></use>
-          </svg>
-          <span>
-            <? $APPLICATION->IncludeComponent(
-              "bitrix:main.include",
-              "",
-              array(
-                "AREA_FILE_SHOW" => "file",
-                "AREA_FILE_SUFFIX" => "inc",
-                "EDIT_TEMPLATE" => "",
-                "PATH" => "/include/header-phone.php"
-              )
-            ); ?>
-          </span>
-        </a>
 
-        <a href="mailto:info@info">
-          <svg width="20" height="20">
-            <use xlink:href="#icon-mail"></use>
-          </svg>
-          <span>
-            <? $APPLICATION->IncludeComponent(
-              "bitrix:main.include",
-              "",
-              array(
-                "AREA_FILE_SHOW" => "file",
-                "AREA_FILE_SUFFIX" => "inc",
-                "EDIT_TEMPLATE" => "",
-                "PATH" => "/include/header-email.php"
-              )
-            ); ?>
-          </span>
-        </a>
-      </div>
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:news.detail",
+        "header_contacts_template",
+        array(
+          "ACTIVE_DATE_FORMAT" => "d.m.Y",
+          "ADD_ELEMENT_CHAIN" => "N",
+          "ADD_SECTIONS_CHAIN" => "Y",
+          "AJAX_MODE" => "N",
+          "AJAX_OPTION_ADDITIONAL" => "",
+          "AJAX_OPTION_HISTORY" => "N",
+          "AJAX_OPTION_JUMP" => "N",
+          "AJAX_OPTION_STYLE" => "Y",
+          "BROWSER_TITLE" => "-",
+          "CACHE_GROUPS" => "Y",
+          "CACHE_TIME" => "36000000",
+          "CACHE_TYPE" => "A",
+          "CHECK_DATES" => "Y",
+          "DETAIL_URL" => "",
+          "DISPLAY_BOTTOM_PAGER" => "N",
+          "DISPLAY_DATE" => "Y",
+          "DISPLAY_NAME" => "Y",
+          "DISPLAY_PICTURE" => "Y",
+          "DISPLAY_PREVIEW_TEXT" => "Y",
+          "DISPLAY_TOP_PAGER" => "N",
+          "ELEMENT_CODE" => "",
+          "ELEMENT_ID" => "24",
+          "FIELD_CODE" => array("", ""),
+          "IBLOCK_ID" => "8",
+          "IBLOCK_TYPE" => "contacts",
+          "IBLOCK_URL" => "",
+          "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+          "MESSAGE_404" => "",
+          "META_DESCRIPTION" => "-",
+          "META_KEYWORDS" => "-",
+          "PAGER_BASE_LINK_ENABLE" => "N",
+          "PAGER_SHOW_ALL" => "N",
+          "PAGER_TEMPLATE" => ".default",
+          "PAGER_TITLE" => "",
+          "PROPERTY_CODE" => array("PHONE", "EMAIL", ""),
+          "SET_BROWSER_TITLE" => "Y",
+          "SET_CANONICAL_URL" => "N",
+          "SET_LAST_MODIFIED" => "N",
+          "SET_META_DESCRIPTION" => "Y",
+          "SET_META_KEYWORDS" => "Y",
+          "SET_STATUS_404" => "N",
+          "SET_TITLE" => "Y",
+          "SHOW_404" => "N",
+          "STRICT_SECTION_CHECK" => "N",
+          "USE_PERMISSIONS" => "N",
+          "USE_SHARE" => "N"
+        )
+      ); ?>
+
       <nav>
         <? $APPLICATION->IncludeComponent("bitrix:menu", "main_menu", array(
           "ALLOW_MULTI_SELECT" => "N",  // Разрешить несколько активных пунктов одновременно

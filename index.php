@@ -1,6 +1,7 @@
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
   $APPLICATION->SetTitle("Новости банка");
 ?>
+<?php /* Баннеры */ ?>
   <section id="first">
     <? $APPLICATION->IncludeComponent(
       "bitrix:news.list",
@@ -59,6 +60,8 @@
         "STRICT_SECTION_CHECK" => "N"
       )
     ); ?> </section>
+
+<?php /* Преимещества */ ?>
   <section id="whywe">
     <div class="container">
       <div class="headline">
@@ -135,6 +138,7 @@
     </div>
   </section>
 
+<?php /* Консультация (форма) */ ?>
   <div class="contentline" id="centerform">
     <div class="container">
       <div class="info">
@@ -172,7 +176,7 @@
     </div>
   </div>
 
-
+<?php /* Услуги */ ?>
   <div class="contentline" id="wehelp">
     <div class="container">
       <div class="headline">
@@ -250,6 +254,8 @@
       ); ?>
     </div>
   </div>
+
+<?php /* Отзывы */ ?>
   <section id="reviews">
     <div class="container">
       <div class="headline">
@@ -325,6 +331,8 @@
       ); ?>
     </div>
   </section>
+
+<?php /* Партнеры */ ?>
   <section id="partners">
     <div class="container">
       <div class="headline">
@@ -400,54 +408,122 @@
       ); ?>
     </div>
   </section>
-  <div class="contentline" id="lineform">
-  <div class="container">
-    <div class="info">
-      <div class="h3">
+
+<?php /* Контакты */ ?>
+  <div class="contentline" id="contacts">
+    <div class="holder">
+      <div class="container">
+
         <? $APPLICATION->IncludeComponent(
-          "bitrix:main.include",
-          ".default",
+          "bitrix:news.detail",
+          "contacts_template",
           array(
-            "AREA_FILE_SHOW" => "file",
-            "AREA_FILE_SUFFIX" => "inc",
-            "COMPONENT_TEMPLATE" => ".default",
-            "EDIT_TEMPLATE" => "",
-            "PATH" => "/include/footer-contact-form/contact-form-title.php"
+            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "ADD_ELEMENT_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "Y",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "BROWSER_TITLE" => "-",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "CHECK_DATES" => "Y",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_DATE" => "Y",
+            "DISPLAY_NAME" => "Y",
+            "DISPLAY_PICTURE" => "Y",
+            "DISPLAY_PREVIEW_TEXT" => "Y",
+            "DISPLAY_TOP_PAGER" => "N",
+            "ELEMENT_CODE" => "",
+            "ELEMENT_ID" => "24",
+            "FIELD_CODE" => array("", ""),
+            "IBLOCK_ID" => "8",
+            "IBLOCK_TYPE" => "contacts",
+            "IBLOCK_URL" => "",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+            "MESSAGE_404" => "",
+            "META_DESCRIPTION" => "-",
+            "META_KEYWORDS" => "-",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "",
+            "PROPERTY_CODE" => array("TITLE", "PHONE", "EMAIL", "ADDRESS", ""),
+            "SET_BROWSER_TITLE" => "Y",
+            "SET_CANONICAL_URL" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "Y",
+            "SET_META_KEYWORDS" => "Y",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "Y",
+            "SHOW_404" => "N",
+            "STRICT_SECTION_CHECK" => "N",
+            "USE_PERMISSIONS" => "N",
+            "USE_SHARE" => "N"
           )
         ); ?>
-      </div>
-      <div class="subtitle">
 
-        <? $APPLICATION->IncludeComponent(
-          "bitrix:main.include",
-          ".default",
-          array(
-            "AREA_FILE_SHOW" => "file",
-            "AREA_FILE_SUFFIX" => "inc",
-            "COMPONENT_TEMPLATE" => ".default",
-            "EDIT_TEMPLATE" => "",
-            "PATH" => "/include/footer-contact-form/contact-form-subtitle.php"
-          )); ?>
 
       </div>
-
-      <? $APPLICATION->IncludeComponent(
-        "bitrix:main.feedback",
-        "templates/footer-contact-form",
-        array(
-          "AJAX_MODE" => "Y",
-          "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
-          "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
-          "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
-          "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
-            "NONE"
-          ),
-          "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
-        ),
-        false
-      ); ?>
-
-
+      <div id="map"></div>
     </div>
   </div>
+
+<?php /* Контактная форма в футере */ ?>
+  <div class="contentline" id="lineform">
+    <div class="container">
+      <div class="info">
+        <div class="h3">
+          <? $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            ".default",
+            array(
+              "AREA_FILE_SHOW" => "file",
+              "AREA_FILE_SUFFIX" => "inc",
+              "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
+              "PATH" => "/include/footer-contact-form/contact-form-title.php"
+            )
+          ); ?>
+        </div>
+        <div class="subtitle">
+
+          <? $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            ".default",
+            array(
+              "AREA_FILE_SHOW" => "file",
+              "AREA_FILE_SUFFIX" => "inc",
+              "COMPONENT_TEMPLATE" => ".default",
+              "EDIT_TEMPLATE" => "",
+              "PATH" => "/include/footer-contact-form/contact-form-subtitle.php"
+            )); ?>
+
+        </div>
+
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:main.feedback",
+          "templates/footer-contact-form",
+          array(
+            "AJAX_MODE" => "Y",
+            "EMAIL_TO" => "rustamergashev.sp@gmail.com",  // E-mail, на который будет отправлено письмо
+            "EVENT_MESSAGE_ID" => "",  // Почтовые шаблоны для отправки письма
+            "OK_TEXT" => "Спасибо, ваше сообщение принято.",  // Сообщение, выводимое пользователю после отправки
+            "REQUIRED_FIELDS" => array(  // Обязательные поля для заполнения
+              "NONE"
+            ),
+            "USE_CAPTCHA" => "N",  // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+          ),
+          false
+        ); ?>
+
+
+      </div>
+    </div>
+  </div>
+
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
