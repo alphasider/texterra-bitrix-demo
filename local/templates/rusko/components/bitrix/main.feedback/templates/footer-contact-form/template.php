@@ -34,7 +34,7 @@
     </div>
     <input type="hidden" name="PARAMS_HASH" value="<?= $arResult["PARAMS_HASH"] ?>">
     <div class="sendblock">
-      <input type="submit" name="submit" class="btn" value="<?= GetMessage("MFT_SUBMIT") ?>">
+      <input type="submit" name="submit" class="btn" value="Отправить">
       <div class="small">Нажимая на кнопку “Отправить”, вы подтверждаете свое согласие на <a href="#" target="_blank">обработку
           пользовательских данных</a></div>
     </div>

@@ -44,7 +44,7 @@
         </div>
         <input type="hidden" name="PARAMS_HASH" value="<?= $arResult["PARAMS_HASH"] ?>">
         <div class="inputholder btns">
-          <input type="submit" name="submit" class="btn" value="<?= GetMessage("MFT_SUBMIT") ?>" data-send="data-send">
+          <input type="submit" name="submit" class="btn" value="Получить консультацию" data-send="data-send">
           <span class="small">
         Нажимая на кнопку «Получить консультацию», вы подтверждаете свое согласие на
         <a href="#" target="_blank">обработку пользовательских данных.</a>
